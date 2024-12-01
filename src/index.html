@@ -1,14 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <title>Stencil Custom Components</title>
 
     <script type="module" src="/build/stencil-web-components.esm.js"></script>
     <script nomodule src="/build/stencil-web-components.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
   </head>
-  <body>
-    <my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
+
+  <body class="container">
+    <header>
+      <h1>My Custom Components</h1>
+    </header>
+
+    <main>
+      <section>
+        <header><h2>Current Time</h2></header>
+
+        <div class="grid">
+          <article>
+            <header>
+              <h3>every second</h3>
+            </header>
+            <current-time reload-interval="1000"></current-time>
+          </article>
+
+          <article>
+            <header>
+              <h3>every minute</h3>
+            </header>
+            <current-time reload-interval="60000"></current-time>
+          </article>
+
+          <article>
+            <header>
+              <h3>With date</h3>
+            </header>
+            <current-time reload-interval="60000" include-date="true"></current-time>
+          </article>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

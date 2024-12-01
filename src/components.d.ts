@@ -6,56 +6,49 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface CurrentTime {
+        "includeDate": boolean;
+        "reloadInterval": number;
+    }
+    interface RelativeTime {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLCurrentTimeElement extends Components.CurrentTime, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLCurrentTimeElement: {
+        prototype: HTMLCurrentTimeElement;
+        new (): HTMLCurrentTimeElement;
+    };
+    interface HTMLRelativeTimeElement extends Components.RelativeTime, HTMLStencilElement {
+    }
+    var HTMLRelativeTimeElement: {
+        prototype: HTMLRelativeTimeElement;
+        new (): HTMLRelativeTimeElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "current-time": HTMLCurrentTimeElement;
+        "relative-time": HTMLRelativeTimeElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface CurrentTime {
+        "includeDate"?: boolean;
+        "reloadInterval"?: number;
+    }
+    interface RelativeTime {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "current-time": CurrentTime;
+        "relative-time": RelativeTime;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "current-time": LocalJSX.CurrentTime & JSXBase.HTMLAttributes<HTMLCurrentTimeElement>;
+            "relative-time": LocalJSX.RelativeTime & JSXBase.HTMLAttributes<HTMLRelativeTimeElement>;
         }
     }
 }
