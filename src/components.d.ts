@@ -11,6 +11,8 @@ export namespace Components {
         "reloadInterval": number;
     }
     interface RelativeTime {
+        "date": Date;
+        "reloadInterval": number;
     }
 }
 declare global {
@@ -37,6 +39,8 @@ declare namespace LocalJSX {
         "reloadInterval"?: number;
     }
     interface RelativeTime {
+        "date"?: Date;
+        "reloadInterval"?: number;
     }
     interface IntrinsicElements {
         "current-time": CurrentTime;

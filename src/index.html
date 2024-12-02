@@ -43,6 +43,44 @@
           </article>
         </div>
       </section>
+
+      <section>
+        <header><h2>Relative time</h2></header>
+
+        <div class="grid">
+          <article>
+            <header>
+              <h3>Relative Time - in 1 hour</h3>
+            </header>
+            <relative-time id="relative-1" reload-interval="60000"></relative-time>
+          </article>
+
+          <article>
+            <header>
+              <h3>Relative Time - now</h3>
+            </header>
+            <relative-time id="relative-2" reload-interval="1000"></relative-time>
+          </article>
+
+          <article>
+            <header>
+              <h3>Relative Time - 12 hours ago</h3>
+            </header>
+            <relative-time id="relative-3" reload-interval="1000"></relative-time>
+          </article>
+        </div>
+      </section>
     </main>
+
+    <script>
+      const date = new Date();
+      const element1 = document.getElementById('relative-1');
+      const element2 = document.getElementById('relative-2');
+      const element3 = document.getElementById('relative-3');
+
+      element1.date = new Date(date.getTime() + 60 * 60 * 1000);
+      element2.date = new Date();
+      element3.date = new Date(date.getTime() - 12 * 60 * 60 * 1000);
+    </script>
   </body>
 </html>
